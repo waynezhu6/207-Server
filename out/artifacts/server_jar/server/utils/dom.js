@@ -1,7 +1,8 @@
-function createElement(type, innerHTML, classList){
+function createElement(type, innerHTML, classList, id){
   let el = document.createElement(type);
   el.innerHTML = innerHTML;
   el.classList.add(...classList);
+  el.id = id ? id : el.id;
   return el;
 }
 
