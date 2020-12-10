@@ -39,8 +39,8 @@ function getCalendarDates(){
 function getStartEnd(){
   //returns start and end date for this calendar page
   let first = new Date(state.current);
-  let day = first.getDate();
-  first = new Date(first.setDate(-day));
+  let day = first.getDay();
+  first.setDate(first.getDate() - day);
   let last = new Date(first)
   last.setDate(first.getDate() + 41);
   return [first, last];
@@ -70,4 +70,15 @@ function isSameDay(first, second){
   return first.getFullYear() === second.getFullYear() &&
     first.getMonth() === second.getMonth() &&
     first.getDate() === second.getDate();
+}
+
+function getDaysDiff(start, end){
+  //gets number of days since first calendar month date
+  return Math.round((end-start)/(1000*60*60*24));
+}
+
+function getDateByID(id){
+  let date = new Date(getStartEnd()[0]);
+  date.setDate(date.getDate() + id);
+  return getFormattedDate(date);
 }

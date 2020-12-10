@@ -40,7 +40,6 @@ public class Server{
     public static void handleGet(Request req, Response res){
         //get userID field
         //serve webpage alongside JSON, will generate on client side
-        System.out.println("GET requested");
         String userID = req.getParam("id");
         File userJSON = new File("./server/users/" + userID + ".json");
         if(userJSON.exists()){
@@ -52,7 +51,6 @@ public class Server{
     }
 
     public static void handleGetJSON(Request req, Response res){
-        System.out.println("JSON requested");
         String userID = req.getParam("id");
         File userJSON = new File("./server/users/" + userID + ".json");
         if(userJSON.exists()){
@@ -66,7 +64,6 @@ public class Server{
     public static void handlePost(Request req, Response res) {
         //get userID field
         //stores json file associated with userID in users
-        System.out.println("POST requested");
         String userID = req.getParam("id");
 
         try {
@@ -75,7 +72,6 @@ public class Server{
             JSONParser jsonParser = new JSONParser();
             JSONArray eventsJSON = (JSONArray) jsonParser.parse(isr);
 
-            System.out.println(eventsJSON);
             String path = "./server/users/" + userID + ".json";
             FileWriter fw = new FileWriter(path);
             fw.write(eventsJSON.toJSONString());
