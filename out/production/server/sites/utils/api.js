@@ -6,7 +6,7 @@ async function getJSON(){
     return;
   
   //replace localhost with VPS address!
-  let url = "http://localhost:5000/json/" + params[params.length - 1];
+  let url = "http://35.202.216.223:5000/json/" + params[params.length - 1];
   console.log(url);
 
   let result = await fetch(url, {
