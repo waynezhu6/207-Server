@@ -8,6 +8,27 @@ text-rendering: optimizeLegibility !important;
 box-sizing: border-box;
 }
 
+/* width */
+::-webkit-scrollbar{
+    width: 12px;
+}
+
+/* Track */
+::-webkit-scrollbar-track{
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb{
+    background: #AAA;
+    opacity: 0.5;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover{
+    background: #888;
+}
+
 body{
     background-color: white;
     user-select: none;
@@ -136,6 +157,7 @@ body{
     vertical-align: top;
     padding: 16px;
     box-sizing: border-box;
+    overflow: scroll;
 }
 
 .title{
@@ -160,6 +182,7 @@ body{
 .event-date{
     font-size: 1.05em;
     padding: 20px 10px 0px 10px;
+    font-weight: bold;
 }
 
 .event{

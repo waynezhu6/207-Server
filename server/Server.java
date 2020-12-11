@@ -65,7 +65,7 @@ public class Server{
         //get userID field
         //stores json file associated with userID in users
         String userID = req.getParam("id");
-
+        System.out.println(userID);
         try {
             InputStream is = req.getBody();
             InputStreamReader isr = new InputStreamReader(is, StandardCharsets.UTF_8);
@@ -77,7 +77,7 @@ public class Server{
             fw.write(eventsJSON.toJSONString());
             fw.flush();
             fw.close();
-            res.send("https://localhost:5000/" + userID);
+            res.send("https://35.202.216.223:5000/" + userID);
         }
         catch (Exception e) {
             e.printStackTrace();
